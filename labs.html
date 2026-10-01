@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Laboratorios</title>
+<style>
+  :root { --bg: #141517; --surface: #1e1f23; --line: #2d2f36; --fg: #e8e9ec; --muted: #9ba1ab; --accent: #ff7a1a; --ok: #46a758; --warn: #e5a000; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 14px/1.5 system-ui, sans-serif; }
+  header { display: flex; align-items: center; gap: 14px; padding: 12px 16px; background: var(--surface); border-bottom: 1px solid var(--line); }
+  header a { color: var(--muted); text-decoration: none; } header b { font-size: 15px; }
+  main { max-width: 980px; margin: 0 auto; padding: 20px 16px; }
+  p.lead { color: var(--muted); margin: 0 0 18px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+  a.card { display: flex; flex-direction: column; gap: 6px; padding: 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); color: inherit; text-decoration: none; }
+  a.card:hover { border-color: var(--accent); }
+  .card h2 { margin: 0; font-size: 15px; }
+  .card p { margin: 0; color: var(--muted); }
+  .tag { align-self: flex-start; font-size: 11px; padding: 1px 7px; border-radius: 99px; border: 1px solid currentColor; }
+  .tag.new { color: var(--ok); } .tag.old { color: var(--warn); }
+  .how { margin-top: 22px; padding: 12px 14px; border-left: 3px solid var(--accent); background: #1a1b1f; border-radius: 4px; color: var(--muted); }
+  .how b { color: var(--fg); }
+</style>
+</head>
+<body>
+<header><a href="./index.html">← Prototipo</a><b>Laboratorios</b></header>
+<main>
+  <p class="lead">Páginas aparte para probar un ensamble antes de llevarlo al prototipo. Cada una descarga su pieza de prueba en SVG y en DXF, en milímetros.</p>
+  <div class="grid">
+    <a class="card" href="./snap-lab.html">
+      <span class="tag new">nuevo</span>
+      <h2>Encaje snap</h2>
+      <p>Diente con brazo que se dobla, traba como un candado y se suelta apretando la punta. Dice si el brazo aguanta en tu material y exporta una pareja macho y hembra para cortar.</p>
+    </a>
+    <a class="card" href="./flex-lab.html">
+      <h2>Tramas de flexión</h2>
+      <p>Cortes que dejan doblar una plancha rígida. Muestra la curva en 3D, el radio mínimo por material y exporta la trama.</p>
+    </a>
+    <a class="card" href="./joins-lab.html">
+      <span class="tag old">a sustituir</span>
+      <h2>Uniones</h2>
+      <p>Los estilos de dedos del prototipo. El «a presión» no funciona al cortarlo y se cambiará por el encaje snap.</p>
+    </a>
+  </div>
+  <div class="how">
+    <b>Para probar un ensamble:</b> ajusta material y grosor, mira el diagnóstico, descarga el DXF o el SVG y córtalo sin compensar el kerf; eso lo pone el programa de la máquina.
+    Apunta lo que salió (entra, traba, se parte, queda suelto) junto con los valores del archivo, que van en su nombre.
+  </div>
+</main>
+</body>
+</html>
